@@ -26,7 +26,7 @@ export default function Citations() {
   return (
     <>
       {/* Titre de la page */}
-      <div className="flex flex-col mx-96 mt-10 text-white underline underline-offset-8 decoration-blue-700 font-outline-1 bg-blue-500 border-black rounded-lg border-2 border-double shadow-lg shadow-cyan-600/100 text-center h-auto py-10 m-auto text-6xl hover:bg-blue-700 hover:decoration-blue-900">
+      <div className="flex flex-col mx-96 mt-10 text-white underline underline-offset-8 decoration-sky-700 font-outline-1 hover:font-outline-2 bg-gray-800 border-sky-800 rounded-lg border-4 border-double shadow-lg shadow-sky-800/100 hover:shadow-sky-900/100 text-center h-auto py-10 m-auto text-6xl hover:bg-gray-900 hover:decoration-sky-800">
         <h1>Inspira 2.0</h1>
       </div>
 
