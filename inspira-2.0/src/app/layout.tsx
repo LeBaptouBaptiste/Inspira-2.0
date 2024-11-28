@@ -7,7 +7,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-blue-600 hover:bg-green-600'>
+      <body className='bg-gray-200'>
       {children}
       </body>
     </html>
