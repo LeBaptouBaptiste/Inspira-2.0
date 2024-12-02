@@ -19,8 +19,28 @@ export default function Citations() {
   }, []);
 
   // Fonction pour ajouter une citation
-  const handleAddQuote = (newQuote: Quote) => {
-    setQuotes((prevQuotes) => [newQuote, ...prevQuotes]); // Ajoute la nouvelle citation en haut de la liste
+  async function handleAddQuote(newQuote: Quote){
+    try {
+      const response = await fetch("http://localhost:8000/Back/api.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newQuote),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Erreur lors de l'envoi de la citation");
+      }
+  
+      const result = await response.json();
+      console.log("Citation ajoutée avec succès :", result);
+      setQuotes((prevQuotes) => [...prevQuotes, newQuote]); // Ajoute la nouvelle citation en bas de la liste
+      return result;
+    } catch (error) {
+      console.error("Erreur :", error);
+      throw error;
+    }
   };
 
   return (

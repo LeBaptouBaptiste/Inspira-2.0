@@ -15,6 +15,11 @@ const AddQuoteBubble = ({ onAddQuote }: { onAddQuote: (quote: { quote: string; a
     }
   };
 
+  async function postQuote(newQuote: { quote: string, author: string }) {
+
+  }
+  
+
   return (
     <>
       {/* Bulle en bas à droite */}
