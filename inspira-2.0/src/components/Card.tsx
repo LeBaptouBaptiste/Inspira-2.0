@@ -1,7 +1,7 @@
 import React from "react";
 import { Quote } from "../types/quote"
 
-const Card = ({ quote }: Quote) => {
+const Card = ({ quote }: {quote: Quote} ) => {
     return (
       <div className="col-span-4 md:col-span-1 shadow-lg shadow-sky-800 rounded-xl transform transition-transform duration-300 hover:scale-105">
         <div className="card shadow-md bg-gray-700 rounded-xl border-4 border-sky-800 border-double">

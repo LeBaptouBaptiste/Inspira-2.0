@@ -13,18 +13,13 @@ const AddQuoteBubble = ({ onAddQuote }: { onAddQuote: (quote: { quote: string; a
       setAuthor("");
       setModalOpen(false);
     }
-  };
-
-  async function postQuote(newQuote: { quote: string, author: string }) {
-
-  }
-  
+  };  
 
   return (
     <>
       {/* Bulle en bas à droite */}
       <button
-        className="fixed bottom-4 right-4 w-16 h-16 bg-gray-800 border border-4 border-sky-800 border-double text-white rounded-full shadow-lg flex items-center justify-center text-3xl font-bold hover:bg-gray-900 hover:scale-110 transition-transform duration-300"
+        className="fixed bottom-4 right-4 w-16 h-16 bg-gray-700 border border-4 border-sky-800 border-double text-white rounded-full shadow-lg flex items-center justify-center text-3xl font-bold hover:bg-gray-900 hover:scale-110 transition-transform duration-300"
         onClick={() => setModalOpen(true)}
         >
         +
@@ -34,7 +29,6 @@ const AddQuoteBubble = ({ onAddQuote }: { onAddQuote: (quote: { quote: string; a
       {/* Modal pour ajouter une citation */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center z-50" onClick={(e) => {
-            // Ferme la modal si le clic est sur l'arrière-plan (et non sur le contenu)
             if (e.target === e.currentTarget) {
               setModalOpen(false);
             }

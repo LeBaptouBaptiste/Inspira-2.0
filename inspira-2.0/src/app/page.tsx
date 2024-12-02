@@ -9,7 +9,7 @@ export default function Citations() {
   const [quotes, setQuotes] = useState<Quote[]>([]);
 
   async function getQuotes() {
-    const response = await fetch("http://localhost:8000/Back/api.php");
+    const response = await fetch("http://localhost:8000/api.php");
     const quotes = await response.json();
     setQuotes(quotes);
   }
@@ -18,10 +18,18 @@ export default function Citations() {
     getQuotes();
   }, []);
 
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+        .then((registration) => console.log('scope is: ', registration.scope));
+    }
+  }, []);
+
   // Fonction pour ajouter une citation
   async function handleAddQuote(newQuote: Quote){
     try {
-      const response = await fetch("http://localhost:8000/Back/api.php", {
+      const response = await fetch("http://localhost:8000/api.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
